@@ -1,0 +1,22 @@
+---
+title: "purr, a proof of concept"
+author: "Joanne Jang"
+date: "2/27/2017"
+output: html_document
+---
+
+If you don't have jsonlite installed:
+```{r}
+install.packages("jsonlite")
+```
+
+
+```{r}
+library(jsonlite)
+purr <- function(){
+  url <- "http://catfacts-api.appspot.com/api/facts?number=1"
+  fact <- fromJSON(url)$facts
+  message(fact)
+}
+purr()
+```
